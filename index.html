@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🌸</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;overflow-x:hidden;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color:#294936;
+  background:
+    radial-gradient(circle at 10% 10%,#ffffffaa,transparent 25%),
+    radial-gradient(circle at 90% 20%,#d6edcbaa,transparent 30%),
+    linear-gradient(135deg,#edf8df,#dcefd1,#f4f7df,#d7ebca);
+}
+.background{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.petal{position:absolute;top:-60px;opacity:.38;animation:fall linear infinite}
+@keyframes fall{
+  0%{transform:translateY(-80px) rotate(0);opacity:0}
+  10%{opacity:.4}
+  100%{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+.lily{position:absolute;opacity:.16;font-size:90px;animation:lilyFloat 6s ease-in-out infinite}
+.lily.one{left:-10px;top:5%}
+.lily.two{right:-15px;top:18%;font-size:110px;animation-delay:1s}
+.lily.three{left:-20px;top:48%;font-size:75px;animation-delay:2s}
+.lily.four{right:-15px;top:62%;font-size:85px;animation-delay:3s}
+.lily.five{left:5%;bottom:5%;font-size:70px;animation-delay:1.5s}
+.lily.six{right:5%;bottom:8%;font-size:75px;animation-delay:2.5s}
+@keyframes lilyFloat{
+  0%,100%{transform:translateY(0) rotate(-5deg)}
+  50%{transform:translateY(-15px) rotate(5deg)}
+}
+.container{width:92%;max-width:1050px;margin:auto;padding:40px 0 80px}
+.hero{text-align:center;padding:35px 10px 55px}
+.badge{
+  display:inline-block;padding:9px 20px;border-radius:30px;
+  border:1px solid rgba(55,100,65,.2);background:#ffffff73;
+  color:#55795e;font-size:13px;letter-spacing:2px;
+  backdrop-filter:blur(10px);margin-bottom:25px
+}
+.hero h1{
+  font-size:clamp(50px,10vw,100px);line-height:1;color:#315f3e;
+  text-shadow:0 8px 25px rgba(50,90,55,.15)
+}
+.hero h1 span{display:block;font-size:clamp(25px,5vw,45px);margin-top:15px;font-weight:400}
+.hero p{margin-top:25px;font-size:clamp(16px,3vw,21px);color:#59735f}
+.card{
+  margin-top:30px;padding:35px;border-radius:28px;background:#ffffff94;
+  border:1px solid rgba(65,105,70,.16);
+  box-shadow:0 18px 50px rgba(55,90,55,.12);
+  backdrop-filter:blur(15px);animation:appear .8s ease
+}
+@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.card h2{text-align:center;color:#315f3e;font-size:29px;margin-bottom:20px}
+.card p{color:#49604f;line-height:1.85;font-size:16px}
+.cake{text-align:center;font-size:85px;margin-bottom:10px;animation:cakeMove 2.5s ease-in-out infinite}
+@keyframes cakeMove{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+button{
+  display:block;margin:25px auto 0;padding:15px 28px;border:0;border-radius:30px;
+  color:white;background:linear-gradient(135deg,#6d9d69,#3f7651);
+  font-size:16px;font-weight:bold;cursor:pointer;
+  box-shadow:0 9px 25px rgba(50,100,55,.25);transition:.3s
+}
+button:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 13px 30px rgba(50,100,55,.35)}
+button:active{transform:scale(.95)}
+.hidden{display:none}
+.reveal{
+  margin-top:25px;padding:25px;border-radius:20px;background:#d7edcca6;
+  border:1px solid rgba(60,100,65,.15);animation:reveal .7s ease
+}
+@keyframes reveal{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.quote{
+  margin-top:25px;padding:27px;border-left:5px solid #6c9b67;border-radius:15px;
+  background:#ffffff73;font-size:19px;line-height:1.7;font-style:italic;color:#355d3f
+}
+.quote small{display:block;margin-top:10px;font-size:13px;font-style:normal;color:#718473}
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.quote-box{
+  padding:25px;border-radius:20px;background:#ffffff7a;
+  border:1px solid rgba(65,100,65,.12);transition:.3s
+}
+.quote-box:hover{transform:translateY(-7px);box-shadow:0 12px 30px rgba(50,90,55,.12)}
+.quote-icon{font-size:32px;margin-bottom:12px}
+.things{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.thing{padding:25px 15px;text-align:center;border-radius:20px;background:#ffffff7a;transition:.3s}
+.thing:hover{transform:translateY(-7px)}
+.thing-icon{font-size:36px;margin-bottom:12px}
+.thing h3{color:#315d3d;margin-bottom:9px}
+.thing p{font-size:13px}
+.timeline{margin-top:10px;padding-left:27px;border-left:3px solid #82a97b}
+.timeline-item{position:relative;margin-bottom:30px}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-item::before{
+  content:"";position:absolute;left:-36px;top:5px;width:13px;height:13px;border-radius:50%;
+  background:#5e8e5b;box-shadow:0 0 0 5px rgba(94,142,91,.15)
+}
+.timeline-item h3{color:#315d3d;margin-bottom:7px}
+.timeline-item p{font-size:14px}
+.reminders{display:grid;gap:12px}
+.reminder{padding:15px 18px;border-radius:15px;background:#ffffff80;color:#4b634f}
+.reminder::before{content:"✓";margin-right:10px;color:#4e8052;font-weight:bold}
+.lily-section{text-align:center;overflow:hidden;position:relative}
+.lily-big{font-size:110px;margin:15px 0;animation:lilyFloat 5s ease-in-out infinite}
+.lily-section p{max-width:650px;margin:auto}
+.final{
+  margin-top:40px;padding:55px 25px;text-align:center;border-radius:32px;
+  background:linear-gradient(135deg,#cfeac2cc,#f1f7dbe0);
+  border:1px solid rgba(55,95,60,.15);box-shadow:0 18px 50px rgba(55,90,55,.12)
+}
+.final h2{font-size:clamp(30px,6vw,50px);color:#315f3e;margin-bottom:20px}
+.final p{color:#4e6853;line-height:1.8}
+.signature{margin-top:25px;color:#58775c;font-size:17px}
+.floating{position:fixed;bottom:-50px;z-index:50;pointer-events:none;animation:floatUp linear forwards}
+@keyframes floatUp{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  15%{opacity:1}
+  100%{transform:translateY(-115vh) rotate(360deg);opacity:0}
+}
+@media(max-width:700px){
+  .container{width:94%}
+  .card{padding:27px 19px}
+  .quote-grid{grid-template-columns:1fr}
+  .things{grid-template-columns:repeat(2,1fr)}
+  .lily{font-size:60px}
+  .lily.two{font-size:70px}
+  .lily-big{font-size:80px}
+}
+@media(max-width:430px){
+  .things{grid-template-columns:1fr}
+  .hero h1{font-size:55px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+  <div class="lily one">🌸</div>
+  <div class="lily two">🌸</div>
+  <div class="lily three">🌸</div>
+  <div class="lily four">🌸</div>
+  <div class="lily five">🌸</div>
+  <div class="lily six">🌸</div>
+</div>
+
+<div class="container">
+
+<section class="hero">
+  <div class="badge">A LITTLE WEBSITE, A BIG WISH 🌿</div>
+  <h1>Happy Birthday 💚<span>to someone special...</span></h1>
+  <p>Huii ji... aaj ka din sirf aapka hai. 🌸</p>
+</section>
+
+<div class="card">
+  <div class="cake">🎂</div>
+  <h2>Happy Birthday, [HER NAME] 🥹💚</h2>
+  <p>Aaj ka din special hai ji, toh simple sa "Happy Birthday" bolke kaam nahi chalega. 😂</p>
+  <p style="margin-top:15px">Isliye thoda time laga ke ye choti si website bana di. Bas hope hai ki aapko achhi lagegi. 🌿✨</p>
+  <button onclick="openMessage()">Ek choti si baat hai 👀</button>
+  <div id="message" class="reveal hidden">
+    <p>Pata nahi main ye sab properly bol paunga ya nahi ji... isliye website bana ke bol raha hoon. 😂</p>
+    <p style="margin-top:15px">Bas aap hamesha khush raho, haste raho, aur life mein bohot saari beautiful memories banao. 💚</p>
+  </div>
+</div>
+
+<div class="card">
+  <h2>💌 Ek Choti Si Baat...</h2>
+  <p>Sach bolu toh mujhe long-long messages likhna zyada nahi aata ji. 😭</p>
+  <p style="margin-top:15px">Lekin birthday hai, toh aaj thoda extra likhna toh banta hai. 😂</p>
+  <p style="margin-top:15px">Aap mere liye kaafi special ho, aur main genuinely chahta hoon ki aapka ye birthday bohot achha jaaye.</p>
+  <p style="margin-top:15px">Aapko life mein jo bhi chahiye, dheere-dheere sab mile. Aur jo dreams hain, woh bhi complete ho. ✨</p>
+  <div class="quote">"Some people make life brighter just by being in it."<small>— You're one of them. 🌿</small></div>
+</div>
+
+<div class="card lily-section">
+  <div class="lily-big">🌸</div>
+  <h2>A Little Lily For You 🌸</h2>
+  <p>Since you like lilies, this little website needed some too. 🤍</p>
+  <p style="margin-top:15px">Soft, peaceful and beautiful... kinda like the vibe I wanted this page to have. 🌿</p>
+</div>
+
+<div class="card">
+  <h2>🌿 Some Quotes For You</h2>
+  <div class="quote-grid">
+    <div class="quote-box"><div class="quote-icon">🌱</div><p>"Good things take time, and beautiful things are worth waiting for."</p></div>
+    <div class="quote-box"><div class="quote-icon">✨</div><p>"You are enough, exactly as you are."</p></div>
+    <div class="quote-box"><div class="quote-icon">🌸</div><p>"Keep smiling. Your smile can make ordinary moments special."</p></div>
+    <div class="quote-box"><div class="quote-icon">💚</div><p>"May your future be filled with the happiness you deserve."</p></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>✨ Things I Like About You</h2>
+  <div class="things">
+    <div class="thing"><div class="thing-icon">😂</div><h3>Your Laugh</h3><p>Aap hasti ho toh pata nahi kyun mood automatically better ho jata hai.</p></div>
+    <div class="thing"><div class="thing-icon">💬</div><h3>Your Messages</h3><p>Aapka ek simple sa "hii ji" bhi notification ko interesting bana deta hai. 😭</p></div>
+    <div class="thing"><div class="thing-icon">🌿</div><h3>Your Vibe</h3><p>Aapki energy bohot peaceful aur cute si hai.</p></div>
+    <div class="thing"><div class="thing-icon">❤️</div><h3>Simply You</h3><p>Bas aap hi ji. Iska explanation dena thoda mushkil hai. 🥹</p></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🕰️ A Few Little Things</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>🌱 First Conversations</h3>
+      <p>Kabhi normal si baat se conversation start hoti hai aur pata nahi kab itni lambi ho jaati hai. 😂</p>
+    </div>
+    <div class="timeline-item">
+      <h3>😂 Random Talks</h3>
+      <p>Ek topic se doosre topic, phir teesre topic... aur end mein pata hi nahi hota baat kahan se start hui thi. 😭</p>
+    </div>
+    <div class="timeline-item">
+      <h3>💬 "Huii Ji"</h3>
+      <p>Kuch messages simple hote hain, lekin unka notification dekh ke smile aa hi jaati hai. 😭</p>
+    </div>
+    <div class="timeline-item">
+      <h3>🎂 Today</h3>
+      <p>Aaj officially aapka special day hai. So please enjoy it properly ji. 💚</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🌿 A Little Reminder...</h2>
+  <div class="reminders">
+    <div class="reminder">You are doing better than you think.</div>
+    <div class="reminder">Your smile is precious.</div>
+    <div class="reminder">Don't let small problems ruin big days.</div>
+    <div class="reminder">You deserve good people around you.</div>
+    <div class="reminder">Keep chasing your dreams.</div>
+    <div class="reminder">And please keep smiling. 🌸</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🥹 Sach Bolu Toh...</h2>
+  <p>Aapko shayad pata bhi nahi hoga, lekin aapki presence kabhi-kabhi normal day ko bhi thoda better bana deti hai.</p>
+  <p style="margin-top:15px">Aur haan... birthday ke din zyada serious nahi hona hai. 😂</p>
+  <p style="margin-top:15px">Aaj sirf enjoy karna hai, cake khana hai, smile karna hai, aur jo log aapko wish karein unko tang karna hai. 😭😂</p>
+</div>
+
+<div class="card">
+  <h2>🎁 One Last Surprise</h2>
+  <p style="text-align:center">Neeche wala button dabana... lekin pehle promise karo ki smile karogi. 👀</p>
+  <button onclick="openGift()">🎁 Open Your Gift</button>
+  <div id="gift" class="reveal hidden">
+    <h2>🎉 HAPPY BIRTHDAYYY 🎉</h2>
+    <p>May this year bring you lots of happiness, peaceful days, beautiful memories, and plenty of reasons to smile. 🌿</p>
+    <p style="margin-top:15px">Aur haan ji... cake aapka hai, lekin ek slice mera. 😂🎂</p>
+  </div>
+</div>
+
+<div class="final">
+  <h2>Happy Birthday Once Again 💚</h2>
+  <p>Stay happy. Stay smiling. Keep being yourself.</p>
+  <p style="margin-top:15px">May all your little dreams slowly turn into beautiful memories. ✨</p>
+  <div class="signature">— From someone who made this just for you 🌿</div>
+</div>
+
+</div>
+
+<script>
+const background=document.querySelector(".background");
+const flowers=["🌸","🌸","🌿","🍃","✨","🤍"];
+
+for(let i=0;i<30;i++){
+  const petal=document.createElement("div");
+  petal.className="petal";
+  petal.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+  petal.style.left=Math.random()*100+"vw";
+  petal.style.fontSize=15+Math.random()*25+"px";
+  petal.style.animationDuration=7+Math.random()*10+"s";
+  petal.style.animationDelay=Math.random()*10+"s";
+  background.appendChild(petal);
+}
+
+function openMessage(){
+  const message=document.getElementById("message");
+  message.classList.remove("hidden");
+  createFloating(18);
+  message.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function openGift(){
+  const gift=document.getElementById("gift");
+  gift.classList.remove("hidden");
+  createFloating(45);
+  gift.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function createFloating(amount){
+  const emojis=["🌸","🌿","🍃","💚","✨","🤍","🎂","💫"];
+  for(let i=0;i<amount;i++){
+    const item=document.createElement("div");
+    item.className="floating";
+    item.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    item.style.left=Math.random()*100+"vw";
+    item.style.fontSize=18+Math.random()*20+"px";
+    item.style.animationDuration=3+Math.random()*4+"s";
+    document.body.appendChild(item);
+    setTimeout(()=>item.remove(),7500);
+  }
+}
+
+setTimeout(()=>createFloating(6),1200);
+</script>
+
+</body>
+</html>
